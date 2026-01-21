@@ -1,0 +1,160 @@
+
+            /* Общий серый фон с сеткой */
+             html {
+                  all: unset;      
+            }
+            body {
+                all: unset;
+                display: block;
+
+                background-color: #f0f0f0;
+                background-image: linear-gradient(0deg, rgba(200, 200, 200, 0.3) 1px, transparent 1px),
+                                  linear-gradient(90deg, rgba(200, 200, 200, 0.3) 1px, transparent 1px);
+                background-size: 20px 20px;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            div {
+                margin: 0;
+            }
+            /* Для тильды! */
+            a {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+    
+            /* Контейнер для разделения элементов */
+            .container {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                max-width: 1300px; /* Максимальная ширина для центрирования */
+                width: 100%;
+                margin: 0 auto;
+            }
+            .menu{
+                
+                display: flex;
+                justify-content: space-between;
+                border-width: 0.3px;
+                border-color: black;
+
+            }
+    
+            /* Левый блок */
+            .left {
+                width: 60%;
+            }
+    
+            /* Правый блок для SVG */
+            .right {
+                width: 35%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            /* Пример стилей для текста и кнопок */
+            h2, h3 {
+                color: #333;
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+            button {
+                box-shadow: 5px 5px 0px 1px rgb(135 135 135 / 97%);
+                background-color: rgb(145, 213, 240);
+                border-width: 0.3px;
+            }
+    
+            /* Таблица */
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 10px;
+                background-color: floralwhite;
+                box-shadow: 5px 5px 0px 1px rgb(135 135 135 / 97%);
+            }
+            th, td {
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            /* Общий стиль для всех select */
+             /* Обертка для селекта */
+             select {
+                padding: 5px 5px;
+                box-shadow: 5px 5px 0px 1px rgb(135 135 135 / 97%);
+                /* border: 2px solid #ccc; */
+                border-radius: 0.3px;
+                background-color: #f8f8f8;
+                color: #333;
+                /* appearance: none; */
+                cursor: pointer;
+                outline: none;
+                width: 70%;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            /* Стиль при фокусе на select */
+            select:focus {
+                border-color: #4A90E2;
+                box-shadow: 5px 5px 0px 1px rgb(135 135 135 / 97%);
+                /* border: 2px solid #ccc; */
+                border-radius: 0.3px;
+                background-color: #f8f8f8;
+            }
+            button {
+                cursor: pointer;
+            }            
+            button:focus {
+                border-color: #4A90E2;
+                box-shadow: 5px 5px 0px 1px rgb(135 135 135 / 97%);
+                /* border: 2px solid #ccc; */
+                border-radius: 0.3px;
+                background-color: #f8f8f8;
+            }
+
+            
+
+            /* Стиль для псевдо-стрелки */
+            select::after {
+                content: "▼"; /* Стрелочка вниз */
+                font-size: 18px;
+                position: absolute;
+                right: 10px; /* Расположение стрелки справа */
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none; /* Стрелка не блокирует выбор */
+            }
+
+            /* Обертка для селекта */
+            .select-wrapper {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+            }
+            .circle{
+                font-size: 15pt;
+            }
+            .dimmed {
+                filter: brightness(0.7);
+            }
+
+            .highlight {
+            background-color: #4CAF50; /* Change this to any color you like */
+            color: white;
+            transition: background-color 0.3s ease;
+            }
+            .hidden {
+            display: none;
+            }
+            .titleblock {
+                display: flex;
+                margin: 5px;
+                margin-left: 10px;
+            }
+            select:disabled{
+                background-color: #b8b8b8
+            }

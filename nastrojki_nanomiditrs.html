@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href=".favicon.ico" type="image/x-icon">   
+    <link rel="stylesheet" href="lib/style.css">
+    <title>NANOMIDI_2</title>   
+</head>
+<body>
+    <div class="container">
+        <!-- Левая часть -->
+        <div style="width: 60%; padding: 10px;">
+            <h2>NANOMIDI_2.1 TRS Controller</h2>
+            
+            <button id="connect" style="padding: 10px; font-size: 12pt;">Подключить устройство</button>
+            
+            <p id="status">Статус: Отключен</p>
+            <div class="menu"><a href="https://www.ganichev.tech">ganichev.tech</a></div>
+                <h3>TRS:</h3>
+                <div class="menu">
+                <select id="trsmode">
+                    <option value="0">B</option>
+                    <option value="1">A</option>
+                    
+                </select></div>
+                <h3>1. Каналы:</h3>
+                <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                <select id="ch1value" disabled>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="3">4</option>
+                    <option value="4">5</option>
+                    <option value="5">6</option>
+                    <option value="6">7</option>
+                    <option value="7">8</option>
+                    <option value="8">9</option>
+                    <option value="9">10</option>
+                </select>
+                    <div class="titleblock">Л2:</div>
+                <select id="ch2value" disabled>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="3">4</option>
+                    <option value="4">5</option>
+                    <option value="5">6</option>
+                    <option value="6">7</option>
+                    <option value="7">8</option>
+                    <option value="8">9</option>
+                    <option value="9">10</option>
+                </select>
+                <div class="titleblock">П1:</div>
+                <select id="ch3value" disabled>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="3">4</option>
+                    <option value="4">5</option>
+                    <option value="5">6</option>
+                    <option value="6">7</option>
+                    <option value="7">8</option>
+                    <option value="8">9</option>
+                    <option value="9">10</option>
+                </select>
+                    <div class="titleblock">П2:</div>
+                <select id="ch4value" disabled>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="3">4</option>
+                    <option value="4">5</option>
+                    <option value="5">6</option>
+                    <option value="6">7</option>
+                    <option value="7">8</option>
+                    <option value="8">9</option>
+                    <option value="9">10</option>
+                </select>
+                </div>
+            
+                <h3>2. CC потенциометров:</h3>
+                <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                <select id="knob1value" disabled></select>
+                <div class="titleblock">Л2:</div>
+                <select id="knob2value" disabled></select>
+                <div class="titleblock">П1:</div>
+                <select id="knob3value" disabled></select>
+                <div class="titleblock">П2:</div>
+                <select id="knob4value" disabled></select>
+                </div>
+
+                <h3>3. Режим кнопок:</h3>
+                <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                <select id="mode1value" >
+                    <option value="2">Нота</option>
+                    <option value="1">CC кнопка</option>
+                    <option value="3">CC турбо</option>
+                    <option value="4">CC переключатель</option>
+                    <option value="5">Shift 1</option>
+                    <option value="6">Shift 2</option>
+                    <option value="8">Shift 3</option>
+                    <option value="9">Shift 4</option>               
+                    <option value="7">HID</option>
+                    <option value="10">Mode 1</option>
+                    <option value="11">Mode 2</option>
+                    <option value="12">Mode 3</option>
+                    <option value="13">Mode 4</option>
+                </select>
+                <div class="titleblock">Л2:</div>
+                <select id="mode2value" >
+                    <option value="2">Нота</option>
+                    <option value="1">CC кнопка</option>                 
+                    <option value="3">CC турбо</option>
+                    <option value="4">CC переключатель</option>
+                    <option value="5">Shift 1</option>
+                    <option value="6">Shift 2</option>
+                    <option value="8">Shift 3</option>
+                    <option value="9">Shift 4</option>
+                    <option value="7">HID</option>
+                    <option value="10">Mode 1</option>
+                    <option value="11">Mode 2</option>
+                    <option value="12">Mode 3</option>
+                    <option value="13">Mode 4</option>
+                </select>
+                <div class="titleblock">П1:</div>
+                <select id="mode3value" >
+                    <option value="2">Нота</option>
+                    <option value="1">CC кнопка</option>
+                    <option value="3">CC турбо</option>
+                    <option value="4">CC переключатель</option>
+                    <option value="5">Shift 1</option>
+                    <option value="6">Shift 2</option>
+                    <option value="8">Shift 3</option>
+                    <option value="9">Shift 4</option>                   
+                    <option value="7">HID</option>
+                    <option value="10">Mode 1</option>
+                    <option value="11">Mode 2</option>
+                    <option value="12">Mode 3</option>
+                    <option value="13">Mode 4</option>
+                </select>
+                <div class="titleblock">П2:</div>
+                <select id="mode4value" >
+                    <option value="2">Нота</option>
+                    <option value="1">CC кнопка</option>                 
+                    <option value="3">CC турбо</option>
+                    <option value="4">CC переключатель</option>
+                    <option value="5">Shift 1</option>
+                    <option value="6">Shift 2</option>
+                    <option value="8">Shift 3</option>
+                    <option value="9">Shift 4</option>
+                    <option value="7">HID</option>
+                    <option value="10">Mode 1</option>
+                    <option value="11">Mode 2</option>
+                    <option value="12">Mode 3</option>
+                    <option value="13">Mode 4</option>
+                </select>
+                </div>
+                    <div id="shift1knob" class="hidden">
+                        <h3>4.1 СС потенциометров при Shift 1 | Mode 1:</h3>
+                            <div class="menu">
+                                <div class="titleblock">Л1:</div>
+                                    <select id="1knob1value" disabled></select>
+                                <div class="titleblock">Л2:</div>
+                                    <select id="1knob2value" disabled></select>
+                                <div class="titleblock">П1:</div>
+                                    <select id="1knob3value" disabled></select>
+                                <div class="titleblock">П2:</div>
+                                    <select id="1knob4value" disabled></select>    
+                            </div>
+                    </div>
+                    <div id="shift2knob" class="hidden">
+                        <h3>4.2 СС потенциометров при Shift 2 | Mode 2::</h3>
+                            <div class="menu">
+                                <div class="titleblock">Л1:</div>
+                                    <select id="2knob1value" disabled></select>
+                            <div class="titleblock">Л2:</div>
+                                    <select id="2knob2value" disabled></select>
+                            <div class="titleblock">П1:</div>
+                                    <select id="2knob3value" disabled></select>
+                            <div class="titleblock">П2:</div>
+                                    <select id="2knob4value" disabled></select>
+                            </div>
+                    </div>
+
+                    <div id="shift3knob" class="hidden">
+                        <h3>4.3 СС потенциометров при Shift 3 | Mode 3:</h3>
+                            <div class="menu">
+                                <div class="titleblock">Л1:</div>
+                                    <select id="3knob1value" disabled></select>
+                                <div class="titleblock">Л2:</div>
+                                    <select id="3knob2value" disabled></select>
+                                    <div class="titleblock">П1:</div>
+                                    <select id="3knob3value" disabled></select>
+                                <div class="titleblock">П2:</div>
+                                    <select id="3knob4value" disabled></select>
+                            </div>
+                    </div>
+                    <div id="shift4knob" class="hidden">
+                        <h3>4.4 СС потенциометров при Shift 4 | Mode 4:</h3>
+                            <div class="menu">
+                                <div class="titleblock">Л1:</div>
+                                    <select id="4knob1value" disabled></select>
+                            <div class="titleblock">Л2:</div>
+                                    <select id="4knob2value" disabled></select>
+                                <div class="titleblock">П1:</div>
+                                    <select id="4knob3value" disabled></select>
+                            <div class="titleblock">П2:</div>
+                                    <select id="4knob4value" disabled></select>
+                            </div>
+                    </div>
+
+                
+                    <div id="note" class="hidden">
+                        <h3>5.1 СС/№ Ноты:</h3>
+                            <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                    <select id="note1value" disabled ></select>
+                    <div class="titleblock">Л2:</div>
+                    <select id="note2value" disabled></select>
+                    <div class="titleblock">П1:</div>
+                    <select id="note3value" disabled ></select>
+                    <div class="titleblock">П2:</div>
+                    <select id="note4value" disabled></select>
+                </div>
+                </div>
+
+                
+                    <div id="shift1note" class="hidden">
+                    <h3>5.2 СС/№ Ноты при Shift 1 | Mode 1:</h3>
+                    <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                    <select id="1note1value" disabled></select>
+                    <div class="titleblock">Л2:</div>
+                    <select id="1note2value" disabled></select>
+                    <div class="titleblock">П1:</div>
+                    <select id="1note3value" disabled></select>
+                    <div class="titleblock">П2:</div>
+                    <select id="1note4value" disabled></select>
+                    
+                </div>
+                </div>
+                
+                    <div id="shift2note" class="hidden">
+                    <h3>5.3 СС/№ Ноты при Shift 2 | Mode 2:</h3>
+                    <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                    <select id="2note1value" disabled></select>
+                    <div class="titleblock">Л2:</div>
+                    <select id="2note2value" disabled></select>
+                    <div class="titleblock">П1:</div>
+                    <select id="2note3value" disabled></select>
+                    <div class="titleblock">П2:</div>
+                    <select id="2note4value" disabled></select>
+                </div>
+            </div>
+
+
+                
+                <div id="shift3note" class="hidden">
+                    <h3>5.4 СС/№ Ноты при Shift 3 | Mode 3:</h3>
+                    <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                    <select id="3note1value" disabled></select>
+                    <div class="titleblock">Л2:</div>
+                    <select id="3note2value" disabled></select>
+                    <div class="titleblock">П1:</div>
+                    <select id="3note3value" disabled></select>
+                    <div class="titleblock">П2:</div>
+                    <select id="3note4value" disabled></select>
+                    
+                </div>
+                </div>
+                
+                    <div id="shift4note" class="hidden">
+                    <h3>5.5 СС/№ Ноты при Shift 4 | Mode 4:</h3>
+                    <div class="menu">
+                    <div class="titleblock">Л1:</div>
+                    <select id="4note1value" disabled></select>
+                    <div class="titleblock">Л2:</div>
+                    <select id="4note2value" disabled></select>
+                    <div class="titleblock">П1:</div>
+                    <select id="4note3value" disabled></select>
+                    <div class="titleblock">П2:</div>
+                    <select id="4note4value" disabled></select>
+                </div>
+
+                </div>
+                    <div id="hid" class="hidden">
+                        <h3>6.1 HID:</h3>
+                            <div class="menu">
+                            <div class="titleblock">Л1:</div>
+                                <div id="hid0-1">
+                                    <select id="hid1value1" style="width: 100%;" disabled></select>
+                                    <select id="hid1value2" style="width: 100%;" disabled></select>
+                                    <select id="hid1value3" style="width: 100%;" disabled></select>
+                                </div>
+                            <div class="titleblock">Л2:</div>
+                                <div id="hid0-2">
+                                    <select id="hid2value1" style="width: 100%;" disabled></select>
+                                    <select id="hid2value2" style="width: 100%;" disabled></select>
+                                    <select id="hid2value3" style="width: 100%;" disabled></select>
+                                </div>
+                            <div class="titleblock">П1:</div>
+                                <div id="hid0-3">
+                                    <select id="hid3value1" style="width: 100%;" disabled></select>
+                                    <select id="hid3value2" style="width: 100%;" disabled></select>
+                                    <select id="hid3value3" style="width: 100%;" disabled></select>
+                                </div>
+                            <div class="titleblock">П2:</div>
+                                <div id="hid0-4">
+                                    <select id="hid4value1" style="width: 100%;" disabled></select>
+                                    <select id="hid4value2" style="width: 100%;" disabled></select>
+                                    <select id="hid4value3" style="width: 100%;" disabled></select>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div id="shift1hid" class="hidden">
+                        <h3>6.2 HID при Shift 1 | Mode 1:</h3>
+                            <div class="menu">
+                            <div class="titleblock">Л1:</div>
+                                <div id="hid1-1">
+                                    <select id="1hid1value1" style="width: 100%;" disabled></select>
+                                    <select id="1hid1value2" style="width: 100%;" disabled></select>
+                                    <select id="1hid1value3" style="width: 100%;" disabled></select>
+                                </div>
+                             <div class="titleblock">Л2:</div>
+                                <div id="hid1-2">
+                                    <select id="1hid2value1" style="width: 100%;" disabled></select>
+                                    <select id="1hid2value2" style="width: 100%;" disabled></select>
+                                    <select id="1hid2value3" style="width: 100%;" disabled></select>
+                                </div>
+                            
+                            <div class="titleblock">П1:</div>
+                                <div id="hid1-3">
+                                    <select id="1hid3value1" style="width: 100%;" disabled></select>
+                                    <select id="1hid3value2" style="width: 100%;" disabled></select>
+                                    <select id="1hid3value3" style="width: 100%;" disabled></select>
+                                </div>
+                             <div class="titleblock">П2:</div>
+                                <div id="hid1-4">
+                                    <select id="1hid4value1" style="width: 100%;" disabled></select>
+                                    <select id="1hid4value2" style="width: 100%;" disabled></select>
+                                    <select id="1hid4value3" style="width: 100%;" disabled></select>
+                                </div>
+                            </div>
+                            </div>
+                    
+                    <div id="shift2hid" class="hidden">
+                        <h3>6.3 HID при Shift 2 | Mode 2:</h3>
+                        <div class="menu">
+                                <div class="titleblock">Л1:</div>
+                                    <div id="hid2-1">
+                                        <select id="2hid1value1" style="width: 100%;" disabled></select>
+                                        <select id="2hid1value2" style="width: 100%;" disabled></select>
+                                        <select id="2hid1value3" style="width: 100%;" disabled></select>
+                                    </div>
+                                <div class="titleblock">Л2:</div>
+                                    <div id="hid2-2">
+                                        <select id="2hid2value1" style="width: 100%;" disabled></select>
+                                        <select id="2hid2value2" style="width: 100%;" disabled></select>
+                                        <select id="2hid2value3" style="width: 100%;" disabled></select>
+                                    </div>
+                            
+                            <div class="titleblock">П1:</div>
+                                    <div id="hid2-3">
+                                        <select id="2hid3value1" style="width: 100%;" disabled></select>
+                                        <select id="2hid3value2" style="width: 100%;" disabled></select>
+                                        <select id="2hid3value3" style="width: 100%;" disabled></select>
+                                    </div>
+                                <div class="titleblock">П2:</div>
+                                    <div id="hid2-4">
+                                        <select id="2hid4value1" style="width: 100%;" disabled></select>
+                                        <select id="2hid4value2" style="width: 100%;" disabled></select>
+                                        <select id="2hid4value3" style="width: 100%;" disabled></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="shift3hid" class="hidden">
+                                <h3>6.2 HID при Shift 3 | Mode 3:</h3>
+                                    <div class="menu">
+                                    <div class="titleblock">Л1:</div>
+                                        <div id="hid3-1">
+                                            <select id="3hid1value1" style="width: 100%;" disabled></select>
+                                            <select id="3hid1value2" style="width: 100%;" disabled></select>
+                                            <select id="3hid1value3" style="width: 100%;" disabled></select>
+                                        </div>
+                                     <div class="titleblock">Л2:</div>
+                                        <div id="hid3-2">
+                                            <select id="3hid2value1" style="width: 100%;" disabled></select>
+                                            <select id="3hid2value2" style="width: 100%;" disabled></select>
+                                            <select id="3hid2value3" style="width: 100%;" disabled></select>
+                                        </div>
+                                    
+                                    <div class="titleblock">П1:</div>
+                                        <div id="hid3-3">
+                                            <select id="3hid3value1" style="width: 100%;" disabled></select>
+                                            <select id="3hid3value2" style="width: 100%;" disabled></select>
+                                            <select id="3hid3value3" style="width: 100%;" disabled></select>
+                                        </div>
+                                     <div class="titleblock">П2:</div>
+                                        <div id="hid3-4">
+                                            <select id="3hid4value1" style="width: 100%;" disabled></select>
+                                            <select id="3hid4value2" style="width: 100%;" disabled></select>
+                                            <select id="3hid4value3" style="width: 100%;" disabled></select>
+                                        </div>
+                                    </div>
+                                    </div>
+                            
+                            <div id="shift4hid" class="hidden">
+                                <h3>6.5 HID при Shift 4 | Mode 4:</h3>
+                                    <div class="menu">
+                                        <div class="titleblock">Л1:</div>
+                                            <div id="hid4-1">
+                                                <select id="4hid1value1" style="width: 100%;" disabled></select>
+                                                <select id="4hid1value2" style="width: 100%;" disabled></select>
+                                                <select id="4hid1value3" style="width: 100%;" disabled></select>
+                                            </div>
+                                        <div class="titleblock">Л2:</div>
+                                            <div id="hid4-2">
+                                                <select id="4hid2value1" style="width: 100%;" disabled></select>
+                                                <select id="4hid2value2" style="width: 100%;" disabled></select>
+                                                <select id="4hid2value3" style="width: 100%;" disabled></select>
+                                            </div>
+                                    
+                                    <div class="titleblock">П1:</div>
+                                            <div id="hid2-3">
+                                                <select id="4hid3value1" style="width: 100%;" disabled></select>
+                                                <select id="4hid3value2" style="width: 100%;" disabled></select>
+                                                <select id="4hid3value3" style="width: 100%;" disabled></select>
+                                            </div>
+                                        <div class="titleblock">П2:</div>
+                                            <div id="hid2-4">
+                                                <select id="4hid4value1" style="width: 100%;" disabled></select>
+                                                <select id="4hid4value2" style="width: 100%;" disabled></select>
+                                                <select id="4hid4value3" style="width: 100%;" disabled></select>
+                                            </div>
+                                    </div>
+                                </div>
+                    
+                
+                
+                <div class="menu">
+                    <button id="save" style="margin-top: 30px; width: 100%; padding: 10px;" disabled>Сохранить</button>
+                </div>
+                    <button id="defaultAll" style="margin-top: 30px; width: 100%; background-color: #ffffff; display:none" disabled>Восстановить все настройки по умолчанию</button>
+                </div>          
+        
+    
+        <!-- Правая часть с SVG -->
+        <div style="width: 70%; padding: 10px; display: flex;">
+            <div id="svgdiv" style="align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            justify-content: space-between;
+            align-content: flex-end;
+            flex-direction: column;">
+            <svg width="593" height="340" viewBox="0 0 593 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    :root {
+                      --btn-1-fill: #bfbfbf;
+                      --btn-1s-fill: #8c8c8c;
+                      --btn-2-fill: #bfbfbf;
+                      --btn-2s-fill: #8c8c8c;
+                      --btn-4-fill: #d13030;
+                      --btn-4s-fill: #9e0000;
+                      --btn-3-fill: #d13030;
+                      --btn-3s-fill: #9e0000;
+                      --rect-3-fill: #f1cc2b;
+                      --rect-3s-fill: #be9900;
+                      --main-fill: #e4501a;
+                      --mains-fill: #3a120a;
+                      
+                      --rect-4-fill: #f1cc2b;
+                      --rect-4s-fill: #be9900;
+                      --rect-1-fill: #2f6bb2;
+                      --rect-1s-fill: #00387f;
+                      --rect-2-fill: #2f6bb2;
+                      --rect-2s-fill: #00387f;
+                    }
+                  </style>
+  
+                  <rect x="0.5" y="11.5" width="673" height="204" rx="11.5" fill="var(--mains-fill)" stroke="black"/>
+                  <rect x="0.5" y="11.5" width="655" height="188" rx="11.5" fill="var(--main-fill)" stroke="black"/>
+                  <path d="M85.0985 158.398C85.0985 169.526 75.556 178.594 63.7258 178.594C51.8955 178.594 42.353 169.526 42.353 158.398C42.353 147.269 51.8955 138.201 63.7258 138.201C75.556 138.201 85.0985 147.269 85.0985 158.398Z" fill="var(--btn-1-fill)" stroke="black"/>
+                  <path d="M80.5437 151.279C80.5437 162.761 71.3501 172.058 60.0219 172.058C48.6937 172.058 39.5 162.761 39.5 151.279C39.5 139.797 48.6937 130.5 60.0219 130.5C71.3501 130.5 80.5437 139.797 80.5437 151.279Z" fill="var(--btn-1s-fill)" stroke="black"/>
+                  <path d="M435.295 158.443C435.295 169.571 425.752 178.639 413.922 178.639C402.092 178.639 392.549 169.571 392.549 158.443C392.549 147.314 402.092 138.246 413.922 138.246C425.752 138.246 435.295 147.314 435.295 158.443Z" fill="var(--btn-3-fill)" stroke="black"/>
+                  <path d="M430.74 151.324C430.74 162.806 421.546 172.103 410.218 172.103C398.89 172.103 389.696 162.806 389.696 151.324C389.696 139.842 398.89 130.545 410.218 130.545C421.546 130.545 430.74 139.842 430.74 151.324Z" fill="var(--btn-3s-fill)" stroke="black"/>
+                  <path d="M435.099 158.398C435.099 169.526 425.556 178.594 413.726 178.594C401.896 178.594 392.353 169.526 392.353 158.398C392.353 147.269 401.896 138.201 413.726 138.201C425.556 138.201 435.099 147.269 435.099 158.398Z" fill="var(--btn-3-fill)" stroke="black"/>
+                  <path d="M430.544 151.279C430.544 162.761 421.35 172.058 410.022 172.058C398.694 172.058 389.5 162.761 389.5 151.279C389.5 139.797 398.694 130.5 410.022 130.5C421.35 130.5 430.544 139.797 430.544 151.279Z" fill="var(--btn-3s-fill)" stroke="black"/>
+                  <path d="M598.295 158.443C598.295 169.571 588.752 178.639 576.922 178.639C565.092 178.639 555.549 169.571 555.549 158.443C555.549 147.314 565.092 138.246 576.922 138.246C588.752 138.246 598.295 147.314 598.295 158.443Z" fill="var(--btn-4-fill)" stroke="black"/>
+                  <path d="M593.74 151.324C593.74 162.806 584.546 172.103 573.218 172.103C561.89 172.103 552.696 162.806 552.696 151.324C552.696 139.842 561.89 130.545 573.218 130.545C584.546 130.545 593.74 139.842 593.74 151.324Z" fill="var(--btn-4s-fill)" stroke="black"/>
+                  <path d="M243.098 158.398C243.098 169.526 233.556 178.594 221.726 178.594C209.895 178.594 200.353 169.526 200.353 158.398C200.353 147.269 209.895 138.201 221.726 138.201C233.556 138.201 243.098 147.269 243.098 158.398Z" fill="var(--btn-2-fill)" stroke="black"/>
+                  <path d="M238.544 151.279C238.544 162.761 229.35 172.058 218.022 172.058C206.694 172.058 197.5 162.761 197.5 151.279C197.5 139.797 206.694 130.5 218.022 130.5C229.35 130.5 238.544 139.797 238.544 151.279Z" fill="var(--btn-2s-fill)" stroke="black"/>
+                  <path d="M262.118 59.8567C262.118 80.2814 244.075 96.91 221.725 96.91C199.376 96.91 181.333 80.2814 181.333 59.8567C181.333 39.3981 199.412 20.7172 221.725 20.7172C244.039 20.7172 262.118 39.3981 262.118 59.8567Z" fill="#161616" stroke="black"/>
+                  <path d="M258.483 59.1818C258.483 77.6953 242.069 92.7774 221.725 92.7774C201.382 92.7774 184.968 77.6953 184.968 59.1818C184.968 40.6282 201.424 23.3434 221.725 23.3434C242.027 23.3434 258.483 40.6282 258.483 59.1818Z" fill="#414141" stroke="black"/>
+                  <path d="M254.141 55.455C254.141 71.4338 239.178 84.504 220.567 84.504C201.955 84.504 186.993 71.4338 186.993 55.455C186.993 39.4762 201.955 26.406 220.567 26.406C239.178 26.406 254.141 39.4762 254.141 55.455Z" stroke="black"/>
+                  <path d="M188.557 49.4941L186.285 29.0302L213.388 6.66266L225.36 10.4699L243.08 31.4097L248.078 39.5001L230.358 29.0302L193.555 39.5001L188.557 49.4941Z" fill="#414141"/>
+                  <line y1="-0.5" x2="58.3548" y2="-0.5" transform="matrix(0.742791 0.669523 -0.679888 0.733315 210.474 14.3612)" stroke="black"/>
+                  <line y1="-0.5" x2="46.4171" y2="-0.5" transform="matrix(0.11438 0.993437 -0.992117 0.125317 184.468 21.8916)" stroke="black"/>
+                  <path d="M228.495 21.4157C228.495 32.9232 218.214 42.3314 205.427 42.3314C199.049 42.3314 193.945 39.9858 190.432 36.218C186.916 32.4456 184.968 27.2182 184.968 21.4157C184.968 15.6132 186.916 10.3858 190.432 6.61346C193.945 2.84566 199.049 0.5 205.427 0.5C218.214 0.5 228.495 9.90826 228.495 21.4157Z" fill="#1E1B1B" stroke="black"/>
+                  <line y1="-0.5" x2="34.437" y2="-0.5" transform="matrix(0.633312 0.773897 -0.744114 0.668053 225.36 11.4217)" stroke="black"/>
+                  <path d="M222.134 20.4639C222.134 28.8423 215.054 35.6687 206.277 35.6687C197.5 35.6687 190.42 28.8423 190.42 20.4639C190.42 12.0855 197.5 5.25903 206.277 5.25903C215.054 5.25903 222.134 12.0855 222.134 20.4639Z" fill="var(--rect-2-fill)" stroke="black"/>
+                  <path d="M207.505 33.6584L196.691 33.452L200.689 44.9619L207.505 33.6584Z" fill="var(--rect-2-fill)"/>
+                  <path d="M216.273 39.976L237.398 79.3371" stroke="black"/>
+                  <line y1="-2" x2="40.6837" y2="-2" transform="matrix(-0.221997 -0.975048 0.976368 -0.216116 211.124 81.7658)" stroke="var(--rect-2-fill)" stroke-width="4"/>
+                  <line y1="-0.5" x2="4.61221" y2="-0.5" transform="matrix(-0.712075 0.702104 -0.712075 -0.702104 189.777 69.6223)" stroke="#060606"/>
+                  <line y1="-0.5" x2="8.73643" y2="-0.5" transform="matrix(-0.375924 0.92665 -0.930262 -0.366895 209.482 83.3849)" stroke="#060606"/>
+                  <line y1="-0.5" x2="11.0656" y2="-0.5" transform="matrix(0.593595 0.804764 -0.812654 0.582746 236.577 80.9562)" stroke="#060606"/>
+                  <line y1="-0.5" x2="4.7699" y2="-0.5" transform="matrix(0.860666 -0.509169 0.519838 0.854265 254.641 54.2406)" stroke="#060606"/>
+                  <line y1="-0.25" x2="41.4735" y2="-0.25" transform="matrix(-0.217769 -0.976 0.977272 -0.211989 209.482 82.5753)" stroke="#AE9142" stroke-width="0.5"/>
+                  <path d="M107.285 59.8567C107.285 80.2814 89.2417 96.91 66.8926 96.91C44.5434 96.91 26.5 80.2814 26.5 59.8567C26.5 39.3981 44.5791 20.7172 66.8926 20.7172C89.2061 20.7172 107.285 39.3981 107.285 59.8567Z" fill="#161616" stroke="black"/>
+                  <path d="M103.65 59.1818C103.65 77.6953 87.2359 92.7774 66.8926 92.7774C46.5492 92.7774 30.1349 77.6953 30.1349 59.1818C30.1349 40.6282 46.5911 23.3434 66.8926 23.3434C87.1941 23.3434 103.65 40.6282 103.65 59.1818Z" fill="#414141" stroke="black"/>
+                  <path d="M99.3076 55.455C99.3076 71.4338 84.3453 84.504 65.7337 84.504C47.1221 84.504 32.1598 71.4338 32.1598 55.455C32.1598 39.4762 47.1221 26.406 65.7337 26.406C84.3453 26.406 99.3076 39.4762 99.3076 55.455Z" stroke="black"/>
+                  <path d="M33.7242 49.4941L31.4524 29.0302L58.555 6.66266L70.5275 10.4699L88.2476 31.4097L93.2455 39.5001L75.5254 29.0302L38.7221 39.5001L33.7242 49.4941Z" fill="#414141"/>
+                  <line y1="-0.5" x2="58.3548" y2="-0.5" transform="matrix(0.742791 0.669523 -0.679888 0.733315 55.6412 14.3612)" stroke="black"/>
+                  <line y1="-0.5" x2="46.4171" y2="-0.5" transform="matrix(0.11438 0.993437 -0.992117 0.125317 29.6349 21.8916)" stroke="black"/>
+                  <path d="M73.6624 21.4157C73.6624 32.9232 63.3806 42.3314 50.5944 42.3314C44.2163 42.3314 39.1118 39.9858 35.5993 36.218C32.0826 32.4456 30.1349 27.2182 30.1349 21.4157C30.1349 15.6132 32.0826 10.3858 35.5993 6.61346C39.1118 2.84566 44.2163 0.5 50.5944 0.5C63.3806 0.5 73.6624 9.90826 73.6624 21.4157Z" fill="#1E1B1B" stroke="black"/>
+                  <line y1="-0.5" x2="34.437" y2="-0.5" transform="matrix(0.633312 0.773897 -0.744114 0.668053 70.5275 11.4217)" stroke="black"/>
+                  <path d="M67.3013 20.4639C67.3013 28.8423 60.2212 35.6687 51.4443 35.6687C42.6673 35.6687 35.5872 28.8423 35.5872 20.4639C35.5872 12.0855 42.6673 5.25903 51.4443 5.25903C60.2212 5.25903 67.3013 12.0855 67.3013 20.4639Z" fill="var(--rect-1-fill)" stroke="black"/>
+                  <path d="M52.6719 33.6584L41.8586 33.452L45.8565 44.9619L52.6719 33.6584Z" fill="var(--rect-1-fill)"/>
+                  <path d="M61.4402 39.976L82.5654 79.3371" stroke="black"/>
+                  <line y1="-2" x2="40.6837" y2="-2" transform="matrix(-0.221997 -0.975048 0.976368 -0.216116 56.2916 81.7658)" stroke="var(--rect-1-fill)" stroke-width="4"/>
+                  <line y1="-0.5" x2="4.61221" y2="-0.5" transform="matrix(-0.712075 0.702104 -0.712075 -0.702104 34.944 69.6223)" stroke="#060606"/>
+                  <line y1="-0.5" x2="8.73643" y2="-0.5" transform="matrix(-0.375924 0.92665 -0.930262 -0.366895 54.6494 83.3849)" stroke="#060606"/>
+                  <line y1="-0.5" x2="11.0656" y2="-0.5" transform="matrix(0.593595 0.804764 -0.812654 0.582746 81.7444 80.9562)" stroke="#060606"/>
+                  <line y1="-0.5" x2="4.7699" y2="-0.5" transform="matrix(0.860666 -0.509169 0.519838 0.854265 99.8076 54.2406)" stroke="#060606"/>
+                  <line y1="-0.25" x2="41.4735" y2="-0.25" transform="matrix(-0.217769 -0.976 0.977272 -0.211989 54.6494 82.5753)" stroke="var(--rect-1-fill)" stroke-width="0.5"/>
+                  <path d="M452.316 59.8567C452.316 80.2814 434.273 96.91 411.923 96.91C389.574 96.91 371.531 80.2814 371.531 59.8567C371.531 39.3981 389.61 20.7172 411.923 20.7172C434.237 20.7172 452.316 39.3981 452.316 59.8567Z" fill="#161616" stroke="black"/>
+                  <path d="M448.681 59.1818C448.681 77.6953 432.267 92.7774 411.923 92.7774C391.58 92.7774 375.166 77.6953 375.166 59.1818C375.166 40.6282 391.622 23.3434 411.923 23.3434C432.225 23.3434 448.681 40.6282 448.681 59.1818Z" fill="#414141" stroke="black"/>
+                  <path d="M444.338 55.455C444.338 71.4338 429.376 84.504 410.764 84.504C392.153 84.504 377.191 71.4338 377.191 55.455C377.191 39.4762 392.153 26.406 410.764 26.406C429.376 26.406 444.338 39.4762 444.338 55.455Z" stroke="black"/>
+                  <path d="M378.755 49.4941L376.483 29.0302L403.586 6.66266L415.558 10.4699L433.278 31.4097L438.276 39.5001L420.556 29.0302L383.753 39.5001L378.755 49.4941Z" fill="#414141"/>
+                  <line y1="-0.5" x2="58.3548" y2="-0.5" transform="matrix(0.742791 0.669523 -0.679888 0.733315 400.672 14.3612)" stroke="black"/>
+                  <line y1="-0.5" x2="46.4171" y2="-0.5" transform="matrix(0.11438 0.993437 -0.992117 0.125317 374.666 21.8916)" stroke="black"/>
+                  <path d="M418.693 21.4157C418.693 32.9232 408.411 42.3314 395.625 42.3314C389.247 42.3314 384.143 39.9858 380.63 36.218C377.113 32.4456 375.166 27.2182 375.166 21.4157C375.166 15.6132 377.113 10.3858 380.63 6.61346C384.143 2.84566 389.247 0.5 395.625 0.5C408.411 0.5 418.693 9.90826 418.693 21.4157Z" fill="#1E1B1B" stroke="black"/>
+                  <line y1="-0.5" x2="34.437" y2="-0.5" transform="matrix(0.633312 0.773897 -0.744114 0.668053 415.558 11.4217)" stroke="black"/>
+                  <path d="M412.332 20.4639C412.332 28.8423 405.252 35.6687 396.475 35.6687C387.698 35.6687 380.618 28.8423 380.618 20.4639C380.618 12.0855 387.698 5.25903 396.475 5.25903C405.252 5.25903 412.332 12.0855 412.332 20.4639Z" fill="var(--rect-3-fill)" stroke="black"/>
+                  <path d="M397.703 33.6584L386.889 33.452L390.887 44.9619L397.703 33.6584Z" fill="var(--rect-3-fill)"/>
+                  <path d="M406.471 39.976L427.596 79.3371" stroke="black"/>
+                  <line y1="-2" x2="40.6837" y2="-2" transform="matrix(-0.221997 -0.975048 0.976368 -0.216116 401.322 81.7658)" stroke="var(--rect-3s-fill)" stroke-width="4"/>
+                  <line y1="-0.5" x2="4.61221" y2="-0.5" transform="matrix(-0.712075 0.702104 -0.712075 -0.702104 379.975 69.6223)" stroke="#060606"/>
+                  <line y1="-0.5" x2="8.73643" y2="-0.5" transform="matrix(-0.375924 0.92665 -0.930262 -0.366895 399.68 83.3849)" stroke="#060606"/>
+                  <line y1="-0.5" x2="11.0656" y2="-0.5" transform="matrix(0.593595 0.804764 -0.812654 0.582746 426.775 80.9562)" stroke="#060606"/>
+                  <line y1="-0.5" x2="4.7699" y2="-0.5" transform="matrix(0.860666 -0.509169 0.519838 0.854265 444.838 54.2406)" stroke="#060606"/>
+                  <line y1="-0.25" x2="41.4735" y2="-0.25" transform="matrix(-0.217769 -0.976 0.977272 -0.211989 399.68 82.5753)" stroke="#1F4E6A" stroke-width="0.5"/>
+                  <path d="M621.285 59.8567C621.285 80.2814 603.242 96.91 580.893 96.91C558.543 96.91 540.5 80.2814 540.5 59.8567C540.5 39.3981 558.579 20.7172 580.893 20.7172C603.206 20.7172 621.285 39.3981 621.285 59.8567Z" fill="#161616" stroke="black"/>
+                  <path d="M617.65 59.1818C617.65 77.6953 601.236 92.7774 580.893 92.7774C560.549 92.7774 544.135 77.6953 544.135 59.1818C544.135 40.6282 560.591 23.3434 580.893 23.3434C601.194 23.3434 617.65 40.6282 617.65 59.1818Z" fill="#414141" stroke="black"/>
+                  <path d="M613.308 55.455C613.308 71.4338 598.345 84.504 579.734 84.504C561.122 84.504 546.16 71.4338 546.16 55.455C546.16 39.4762 561.122 26.406 579.734 26.406C598.345 26.406 613.308 39.4762 613.308 55.455Z" stroke="black"/>
+                  <path d="M547.724 49.4941L545.452 29.0302L572.555 6.66266L584.527 10.4699L602.248 31.4097L607.245 39.5001L589.525 29.0302L552.722 39.5001L547.724 49.4941Z" fill="#414141"/>
+                  <line y1="-0.5" x2="58.3548" y2="-0.5" transform="matrix(0.742791 0.669523 -0.679888 0.733315 569.641 14.3612)" stroke="black"/>
+                  <line y1="-0.5" x2="46.4171" y2="-0.5" transform="matrix(0.11438 0.993437 -0.992117 0.125317 543.635 21.8916)" stroke="black"/>
+                  <path d="M587.662 21.4157C587.662 32.9232 577.381 42.3314 564.594 42.3314C558.216 42.3314 553.112 39.9858 549.599 36.218C546.083 32.4456 544.135 27.2182 544.135 21.4157C544.135 15.6132 546.083 10.3858 549.599 6.61346C553.112 2.84566 558.216 0.5 564.594 0.5C577.381 0.5 587.662 9.90826 587.662 21.4157Z" fill="#1E1B1B" stroke="black"/>
+                  <line y1="-0.5" x2="34.437" y2="-0.5" transform="matrix(0.633312 0.773897 -0.744114 0.668053 584.527 11.4217)" stroke="black"/>
+                  <path d="M581.301 20.4639C581.301 28.8423 574.221 35.6687 565.444 35.6687C556.667 35.6687 549.587 28.8423 549.587 20.4639C549.587 12.0855 556.667 5.25903 565.444 5.25903C574.221 5.25903 581.301 12.0855 581.301 20.4639Z" fill="var(--rect-4-fill)" stroke="black"/>
+                  <path d="M566.672 33.6584L555.858 33.452L559.856 44.9619L566.672 33.6584Z" fill="var(--rect-4-fill)"/>
+                  <path d="M575.44 39.976L596.565 79.3371" stroke="black"/>
+                  <line y1="-2" x2="40.6837" y2="-2" transform="matrix(-0.221997 -0.975048 0.976368 -0.216116 570.292 81.7658)" stroke="var(--rect-4-fill)" stroke-width="4"/>
+                  <line y1="-0.5" x2="4.61221" y2="-0.5" transform="matrix(-0.712075 0.702104 -0.712075 -0.702104 548.944 69.6223)" stroke="#060606"/>
+                  <line y1="-0.5" x2="8.73643" y2="-0.5" transform="matrix(-0.375924 0.92665 -0.930262 -0.366895 568.649 83.3849)" stroke="#060606"/>
+                  <line y1="-0.5" x2="11.0656" y2="-0.5" transform="matrix(0.593595 0.804764 -0.812654 0.582746 595.744 80.9562)" stroke="#060606"/>
+                  <line y1="-0.5" x2="4.7699" y2="-0.5" transform="matrix(0.860666 -0.509169 0.519838 0.854265 613.808 54.2406)" stroke="#060606"/>
+                  <line y1="-0.25" x2="41.4735" y2="-0.25" transform="matrix(-0.217769 -0.976 0.977272 -0.211989 568.649 82.5753)" stroke="var(--rect-4-fill)" stroke-width="0.5"/>
+  
+  
+                      <defs>
+                      
+                      <filter id="filter5_d_604_10" x="108" y="35" width="32.2" height="30.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dx="4" dy="2"/>
+                      <feGaussianBlur stdDeviation="0.6"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_604_10"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_604_10" result="shape"/>
+                      </filter>
+                      <filter id="filter6_d_604_10" x="181.88" y="35" width="32.2" height="30.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dx="4" dy="2"/>
+                      <feGaussianBlur stdDeviation="0.6"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_604_10"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_604_10" result="shape"/>
+                      </filter>
+                      </defs>
+                      </svg>          
+            </svg>            
+        </div>        
+        </div></div>
+    </div>
+    
+    <script src="lib/keycodeData.js"></script>
+    <script src="lib/hideblocks.js"></script>
+    <script src="lib/serial.js"></script>
+    <script src="lib/defaultALL.js"></script>
+    <script>
+
+let port;
+let textEncoder;
+let textDecoder;
+let writableStreamClosed;
+let writer; // Глобальная переменная для хранения writer
+
+document.getElementById("connect").addEventListener("click", async () => {
+    try {
+        port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 111200 });
+
+        textEncoder = new TextEncoderStream();
+        textDecoder = new TextDecoderStream();
+        writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
+        port.readable.pipeTo(textDecoder.writable);
+
+        const reader = textDecoder.readable.getReader();
+
+        document.getElementById("status").innerText = "Статус: Подключен";
+        document.getElementById("connect").disabled = true;
+
+        await sendCommands(); // Отправляем команды с задержкой
+
+        const readLoop = async () => {
+            let buffer = "";
+            while (true) {
+                const { value, done } = await reader.read();
+                if (done) break;
+
+                buffer += value; // Накопление данных в буфере
+                console.log("Received data:", buffer);
+
+                // Обработка данных, если буфер содержит полную строку
+                const lines = buffer.split("\n");
+                if (lines.length > 1) {
+                    for (let i = 0; i < lines.length - 1; i++) {
+                        const line = lines[i].trim();
+                        if (line.startsWith("CH+M:")) {
+                            const chMatch = line.match(/CH\+M:\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]/);
+                            if (chMatch) {
+                                document.getElementById('ch1value').value = chMatch[1];
+                                document.getElementById('ch2value').value = chMatch[2];
+                                document.getElementById('ch3value').value = chMatch[3];
+                                document.getElementById('ch4value').value = chMatch[4];
+                                document.getElementById('mode1value').value = chMatch[5];
+                                document.getElementById('mode2value').value = chMatch[6];
+                                document.getElementById('mode3value').value = chMatch[7];
+                                document.getElementById('mode4value').value = chMatch[8];
+                                activeBlockConnect();
+                            }
+                            else {
+                                console.error("Failed to parse NOTE data:", line);
+                            }
+                        }
+                        if (line.startsWith("KNOB:")) {
+                            const knobMatch = line.match(/KNOB: \s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]/);
+                            if (knobMatch) {
+                                document.getElementById('knob1value').value = knobMatch[1];
+                                document.getElementById('knob2value').value = knobMatch[2];
+                                document.getElementById('knob3value').value = knobMatch[3];
+                                document.getElementById('knob4value').value = knobMatch[4];
+                                document.getElementById('1knob1value').value = knobMatch[5];
+                                document.getElementById('1knob2value').value = knobMatch[6];
+                                document.getElementById('1knob3value').value = knobMatch[7];
+                                document.getElementById('1knob4value').value = knobMatch[8];
+                                document.getElementById('2knob1value').value = knobMatch[9];
+                                document.getElementById('2knob2value').value = knobMatch[10];
+                                document.getElementById('2knob3value').value = knobMatch[11];
+                                document.getElementById('2knob4value').value = knobMatch[12];
+                                document.getElementById('3knob1value').value = knobMatch[13];
+                                document.getElementById('3knob2value').value = knobMatch[14];
+                                document.getElementById('3knob3value').value = knobMatch[15];
+                                document.getElementById('3knob4value').value = knobMatch[16];
+                                document.getElementById('4knob1value').value = knobMatch[17];
+                                document.getElementById('4knob2value').value = knobMatch[18];
+                                document.getElementById('4knob3value').value = knobMatch[19];
+                                document.getElementById('4knob4value').value = knobMatch[20];
+                            }
+                        }
+                        if (line.startsWith("NOTE:")) {
+                            const noteMatch = line.match(/NOTE: \s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]\s*\[(\d+),\s*(\d+),\s*(\d+),\s*(\d+)\]/);
+                            if (noteMatch) {
+                                document.getElementById('note1value').value = noteMatch[1];
+                                document.getElementById('note2value').value = noteMatch[2];
+                                document.getElementById('note3value').value = noteMatch[3];
+                                document.getElementById('note4value').value = noteMatch[4];
+                                document.getElementById('1note1value').value = noteMatch[5];
+                                document.getElementById('1note2value').value = noteMatch[6];
+                                document.getElementById('1note3value').value = noteMatch[7];
+                                document.getElementById('1note4value').value = noteMatch[8];
+                                document.getElementById('2note1value').value = noteMatch[9];
+                                document.getElementById('2note2value').value = noteMatch[10];
+                                document.getElementById('2note3value').value = noteMatch[11];
+                                document.getElementById('2note4value').value = noteMatch[12];
+                                document.getElementById('3note1value').value = noteMatch[13];
+                                document.getElementById('3note2value').value = noteMatch[14];
+                                document.getElementById('3note3value').value = noteMatch[15];
+                                document.getElementById('3note4value').value = noteMatch[16];
+                                document.getElementById('4note1value').value = noteMatch[17];
+                                document.getElementById('4note2value').value = noteMatch[18];
+                                document.getElementById('4note3value').value = noteMatch[19];
+                                document.getElementById('4note4value').value = noteMatch[20];
+                            }
+                        }
+                        if (line.startsWith("TRS:")) {
+                            const trsMatch = line.match(/TRS:\s*(\d+)/);
+                            document.getElementById('trsmode').value = trsMatch[1];
+                        }
+
+                        if (line.startsWith("HID:")) {
+                            const hidMatch = line.match(/\d+/g);
+                            if (hidMatch) {
+                                // Установка значений HID
+                                document.getElementById('hid1value1').value = hidMatch[0];
+                                document.getElementById('hid1value2').value = hidMatch[1];
+                                document.getElementById('hid1value3').value = hidMatch[2];
+                                document.getElementById('hid2value1').value = hidMatch[3];
+                                document.getElementById('hid2value2').value = hidMatch[4];
+                                document.getElementById('hid2value3').value = hidMatch[5];
+                                document.getElementById('hid3value1').value = hidMatch[6];
+                                document.getElementById('hid3value2').value = hidMatch[7];
+                                document.getElementById('hid3value3').value = hidMatch[8];
+                                document.getElementById('hid4value1').value = hidMatch[9];
+                                document.getElementById('hid4value2').value = hidMatch[10];
+                                document.getElementById('hid4value3').value = hidMatch[11];
+                                document.getElementById('1hid1value1').value = hidMatch[12];
+                                document.getElementById('1hid1value2').value = hidMatch[13];
+                                document.getElementById('1hid1value3').value = hidMatch[14];
+                                document.getElementById('1hid2value1').value = hidMatch[15];
+                                document.getElementById('1hid2value2').value = hidMatch[16];
+                                document.getElementById('1hid2value3').value = hidMatch[17];
+                                document.getElementById('1hid3value1').value = hidMatch[18];
+                                document.getElementById('1hid3value2').value = hidMatch[19];
+                                document.getElementById('1hid3value3').value = hidMatch[20];
+                                document.getElementById('1hid4value1').value = hidMatch[21];
+                                document.getElementById('1hid4value2').value = hidMatch[22];
+                                document.getElementById('1hid4value3').value = hidMatch[23];
+                                document.getElementById('2hid1value1').value = hidMatch[24];
+                                document.getElementById('2hid1value2').value = hidMatch[25];
+                                document.getElementById('2hid1value3').value = hidMatch[26];
+                                document.getElementById('2hid2value1').value = hidMatch[27];
+                                document.getElementById('2hid2value2').value = hidMatch[28];
+                                document.getElementById('2hid2value3').value = hidMatch[29];
+                                document.getElementById('2hid3value1').value = hidMatch[30];
+                                document.getElementById('2hid3value2').value = hidMatch[31];
+                                document.getElementById('2hid3value3').value = hidMatch[32];
+                                document.getElementById('2hid4value1').value = hidMatch[33];
+                                document.getElementById('2hid4value2').value = hidMatch[34];
+                                document.getElementById('2hid4value3').value = hidMatch[35];
+                                document.getElementById('3hid1value1').value = hidMatch[36];
+                                document.getElementById('3hid1value2').value = hidMatch[37];
+                                document.getElementById('3hid1value3').value = hidMatch[38];
+                                document.getElementById('3hid2value1').value = hidMatch[39];
+                                document.getElementById('3hid2value2').value = hidMatch[40];
+                                document.getElementById('3hid2value3').value = hidMatch[41];
+                                document.getElementById('3hid3value1').value = hidMatch[42];
+                                document.getElementById('3hid3value2').value = hidMatch[43];
+                                document.getElementById('3hid3value3').value = hidMatch[44];
+                                document.getElementById('3hid4value1').value = hidMatch[45];
+                                document.getElementById('3hid4value2').value = hidMatch[46];
+                                document.getElementById('3hid4value3').value = hidMatch[47];
+                                document.getElementById('4hid1value1').value = hidMatch[48];
+                                document.getElementById('4hid1value2').value = hidMatch[49];
+                                document.getElementById('4hid1value3').value = hidMatch[50];
+                                document.getElementById('4hid2value1').value = hidMatch[51];
+                                document.getElementById('4hid2value2').value = hidMatch[52];
+                                document.getElementById('4hid2value3').value = hidMatch[53];
+                                document.getElementById('4hid3value1').value = hidMatch[54];
+                                document.getElementById('4hid3value2').value = hidMatch[55];
+                                document.getElementById('4hid3value3').value = hidMatch[56];
+                                document.getElementById('4hid4value1').value = hidMatch[57];
+                                document.getElementById('4hid4value2').value = hidMatch[58];
+                                document.getElementById('4hid4value3').value = hidMatch[59];
+                            }
+                        }
+                        // Аналогично для HID, NOTE, KNOB
+                    }
+                    buffer = lines[lines.length - 1]; // Сохраняем оставшиеся данные
+                }
+            }
+        };
+
+        readLoop();
+
+    } catch (error) {
+        console.error("Error opening the serial port:", error);
+        alert("Failed to connect to the serial port.");
+    }
+});
+
+async function sendCommands() {
+    await sendCommand("READ1");
+    await updateShifts();
+}
+
+async function sendCommand(command) {
+    if (port && port.writable) {
+        try {
+            if (!writer) {
+                writer = textEncoder.writable.getWriter(); // Создаем writer, если он еще не создан
+            }
+            await writer.write(command + "\n"); // Отправляем команду
+            console.log("Command sent:", command);
+        } catch (error) {
+            console.error("Error sending command:", error);
+        }
+    } else {
+        alert("Serial port is not connected.");
+    }
+}
+
+window.addEventListener("beforeunload", async () => {
+    if (writer) {
+        await writer.releaseLock(); // Освобождаем writer
+    }
+    if (port) {
+        await textEncoder.writable.close();
+        await writableStreamClosed;
+        await port.close();
+    }
+});
+
+document.getElementById("defaultAll").addEventListener("click", function() {
+    if (confirm("Подтвердите сброс всех настроек на значения по умолчанию")) {
+        alldefaultsettings();
+    }
+    // Если пользователь выбрал "Отмена", то окно просто закроется, и функция не выполнится
+});
+
+    </script>
+</body>
+</html>
